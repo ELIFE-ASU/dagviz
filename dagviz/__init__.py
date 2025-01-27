@@ -21,9 +21,9 @@ from .dagre import Dagre  # noqa
 
 
 def make_abstract_plot(
-    G: nx.Graph,
-    *,
-    order: Union[Sequence[Any], Callable[..., Sequence[Any]]] = dag.topological_sort,
+        G: nx.Graph,
+        *,
+        order: Union[Sequence[Any], Callable[..., Sequence[Any]]] = dag.topological_sort,
 ) -> AbstractPlot:
     """Generate an abstract plot for a DAG.
 
@@ -54,7 +54,7 @@ def make_abstract_plot(
 
 
 def render_svg(
-    G: nx.Graph, *, style: Callable[..., iStyle] = metro.svg_renderer()
+        G: nx.Graph, *, style: Callable[..., iStyle] = metro.svg_renderer()
 ) -> str:
     """
     Generate a DAG visualization as an SVG string.

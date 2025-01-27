@@ -87,7 +87,7 @@ class AbstractColumn:
         return self.remaining == 0
 
     def __init__(
-        self, column: int, row: "AbstractRow", color: int = 0, remaining: int = 0
+            self, column: int, row: "AbstractRow", color: int = 0, remaining: int = 0
     ):
         self.column = column
         self.start_row = row
@@ -128,11 +128,11 @@ class AbstractRow:
             yield col
 
     def __init__(
-        self,
-        builder: iRowBuilder,
-        row: int,
-        columns: Mapping[Any, AbstractColumn],
-        label: str,
+            self,
+            builder: iRowBuilder,
+            row: int,
+            columns: Mapping[Any, AbstractColumn],
+            label: str,
     ):
         """
         Construct a new abstract row.

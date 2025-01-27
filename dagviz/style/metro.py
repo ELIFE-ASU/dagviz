@@ -16,12 +16,12 @@ _XY = Tuple[float, float]
 
 
 def _arc(
-    dwg: svg.Drawing,
-    p0: _XY,
-    p1: _XY,
-    radius: float,
-    clockwise: bool = True,
-    **kwargs: Any,
+        dwg: svg.Drawing,
+        p0: _XY,
+        p1: _XY,
+        radius: float,
+        clockwise: bool = True,
+        **kwargs: Any,
 ) -> Any:
     """Adds an arc that bulges to the right as it moves from p0 to p1"""
     x0 = p0[0]
@@ -92,10 +92,10 @@ class _Style(iStyle):
     box_right: float
 
     def __init__(
-        self,
-        config: StyleConfig,
-        colors: int,
-        shift: int = 0,
+            self,
+            config: StyleConfig,
+            colors: int,
+            shift: int = 0,
     ):
         self.d = svg.Drawing()
         self.background = self.d.g()
@@ -131,7 +131,7 @@ class _Style(iStyle):
 
     def coord(self, xy: Tuple[int, int], dxy: _XY = (0.0, 0.0)) -> _XY:
         x = self.config.scale * (xy[0] + self.shift) * 2 + self.config.arc_radius * (
-            dxy[0] + 1
+                dxy[0] + 1
         )
         y = self.config.scale * xy[1] * 2 + self.config.arc_radius * (dxy[1] + 1)
         self._top = min(y, self._top)
@@ -163,7 +163,7 @@ class _Style(iStyle):
         )
 
     def _place_edge(
-        self, layer: svg.container.Group, a: _XY, b: _XY, color: int
+            self, layer: svg.container.Group, a: _XY, b: _XY, color: int
     ) -> None:
         layer.add(
             self.d.line(
@@ -180,32 +180,32 @@ class _Style(iStyle):
                 a,
                 b,
                 stroke_width=self.config.edge_stroke_width
-                + 2 * min(self.config.edge_stroke_width, self.config.node_stroke_width),
+                             + 2 * min(self.config.edge_stroke_width, self.config.node_stroke_width),
                 stroke="white",
             )
         )
 
     def place_left_hline(
-        self, left: Tuple[int, int], right: Tuple[int, int], color: int
+            self, left: Tuple[int, int], right: Tuple[int, int], color: int
     ) -> None:
         a, b = self.right(left), self.coord(right)
         self._place_hline_border(a, b)
         self._place_edge(self.hlines, a, b, color)
 
     def place_right_hline(
-        self, left: Tuple[int, int], right: Tuple[int, int], color: int
+            self, left: Tuple[int, int], right: Tuple[int, int], color: int
     ) -> None:
         a, b = self.coord(left), self.left(right)
         self._place_hline_border(a, b)
         self._place_edge(self.hlines, a, b, color)
 
     def place_vline_arc(
-        self, top: Tuple[int, int], bottom: Tuple[int, int], color: int
+            self, top: Tuple[int, int], bottom: Tuple[int, int], color: int
     ) -> None:
         self._place_edge(self.vlines, self.coord(top), self.top(bottom), color)
 
     def place_vline_node(
-        self, top: Tuple[int, int], bottom: Tuple[int, int], color: int
+            self, top: Tuple[int, int], bottom: Tuple[int, int], color: int
     ) -> None:
         self._place_edge(self.vlines, self.coord(top), self.coord(bottom), color)
 
@@ -244,7 +244,7 @@ class _Style(iStyle):
         )
 
     def place_label(
-        self, nodepos: Tuple[int, int], at: Tuple[int, int], label: str
+            self, nodepos: Tuple[int, int], at: Tuple[int, int], label: str
     ) -> None:
         self.nodes.add(
             self.d.text(

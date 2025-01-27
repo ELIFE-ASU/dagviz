@@ -37,7 +37,7 @@ class iStyle(ABC):
 
     @abstractmethod
     def place_left_hline(
-        self, left: Tuple[int, int], right: Tuple[int, int], color: int
+            self, left: Tuple[int, int], right: Tuple[int, int], color: int
     ) -> None:
         """
         Place a horizontal line from a node input on to a node, where the
@@ -55,7 +55,7 @@ class iStyle(ABC):
 
     @abstractmethod
     def place_right_hline(
-        self, left: Tuple[int, int], right: Tuple[int, int], color: int
+            self, left: Tuple[int, int], right: Tuple[int, int], color: int
     ) -> None:
         """
         Place a horizontal line from a node input on to a node, where the
@@ -73,7 +73,7 @@ class iStyle(ABC):
 
     @abstractmethod
     def place_vline_arc(
-        self, top: Tuple[int, int], bottom: Tuple[int, int], color: int
+            self, top: Tuple[int, int], bottom: Tuple[int, int], color: int
     ) -> None:
         """
         Place a vertical line from a node to a node input, where the input
@@ -92,7 +92,7 @@ class iStyle(ABC):
 
     @abstractmethod
     def place_vline_node(
-        self, top: Tuple[int, int], bottom: Tuple[int, int], color: int
+            self, top: Tuple[int, int], bottom: Tuple[int, int], color: int
     ) -> None:
         """
         Place a vertical line from a node to a node input, where the input
@@ -132,7 +132,7 @@ class iStyle(ABC):
 
     @abstractmethod
     def place_label(
-        self, nodepos: Tuple[int, int], at: Tuple[int, int], label: str
+            self, nodepos: Tuple[int, int], at: Tuple[int, int], label: str
     ) -> None:
         """
         Place a label for a node.

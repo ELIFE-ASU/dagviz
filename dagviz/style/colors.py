@@ -20,5 +20,5 @@ def palette(ncolors: int) -> Sequence[str]:
         hue = (hue + 1) % 7
         if hue == 0:
             lightness = (lightness + 1) % 3
-        colors.append(f"#{int(r*256):02x}{int(g*256):02x}{int(b*256):02x}")
+        colors.append(f"#{int(r * 256):02x}{int(g * 256):02x}{int(b * 256):02x}")
     return colors
