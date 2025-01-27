@@ -6,7 +6,7 @@ DAGVIZ offers a "git log"-like visualization for DAGs represented in networkx.
 DAGVIZ can be installed with `pip`:
 
 ```bash
-pip install dagviz
+pip install dagviz git+https://github.com/ELIFE-ASU/dagviz.git
 ```
 
 ## Documentation
