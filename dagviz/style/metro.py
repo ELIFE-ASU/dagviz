@@ -22,7 +22,20 @@ def _arc(
         clockwise: bool = True,
         **kwargs: Any,
 ) -> Any:
-    """Adds an arc that bulges to the right as it moves from p0 to p1"""
+    """
+    Adds an arc that bulges to the right as it moves from p0 to p1.
+
+    Args:
+        dwg: The SVG drawing object.
+        p0: The starting point of the arc as a tuple of (x, y) coordinates.
+        p1: The ending point of the arc as a tuple of (x, y) coordinates.
+        radius: The radius of the arc.
+        clockwise: Optional; If True, the arc is drawn clockwise. Defaults to True.
+        **kwargs: Additional keyword arguments to pass to the SVG path.
+
+    Returns:
+        An SVG path element representing the arc.
+    """
     x0 = p0[0]
     y0 = p0[1]
     x1 = p1[0] - p0[0]
@@ -269,10 +282,23 @@ def svg_renderer(config: StyleConfig = StyleConfig()) -> Callable[..., iStyle]:
     Create a renderer with the specified style configuration.
 
     Args:
-        config: the configuration of the metro style
+        config: The configuration of the metro style.
+
+    Returns:
+        A callable that builds an iStyle object with the specified number of colors and shift.
     """
 
     def builder(colors: int, shift: int = 0) -> iStyle:
+        """
+        Build an iStyle object with the specified number of colors and shift.
+
+        Args:
+            colors: The number of colors to use in the style.
+            shift: Optional; The shift value for the coordinates. Defaults to 0.
+
+        Returns:
+            An iStyle object configured with the specified colors and shift.
+        """
         return _Style(config, colors, shift)
 
     return builder

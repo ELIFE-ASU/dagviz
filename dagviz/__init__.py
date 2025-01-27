@@ -25,7 +25,8 @@ def make_abstract_plot(
         *,
         order: Union[Sequence[Any], Callable[..., Sequence[Any]]] = dag.topological_sort,
 ) -> AbstractPlot:
-    """Generate an abstract plot for a DAG.
+    """
+    Generate an abstract plot for a DAG.
 
     The abstract plot comprises a sequence of rows with varying number of
     columns, where each column provide information on what it contains.
@@ -43,11 +44,17 @@ def make_abstract_plot(
         sequence = order
     else:
         sequence = order(G)
+
+    # Iterate over each node in the sequence
     for nd in sequence:
+        # Add a row to the plot with the node's label
         row = plot.add_row(G.nodes[nd].get("label", f"{nd}"))
+
+        # Add inputs to the row for each predecessor of the node
         for pred in G.pred[nd]:
             row.add_input(pred)
 
+        # Add the node to the row with the number of its successors
         row.add_node(nd, len(G.succ[nd]))
 
     return plot
