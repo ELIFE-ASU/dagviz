@@ -14,10 +14,10 @@ import networkx as nx
 from networkx.algorithms import dag
 
 from .abstract import AbstractPlot
-from .render import render
-from .istyle import iStyle
-from .style import metro
 from .dagre import Dagre  # noqa
+from .istyle import iStyle
+from .render import render
+from .style import metro
 
 
 def make_abstract_plot(

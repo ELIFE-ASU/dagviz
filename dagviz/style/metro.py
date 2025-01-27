@@ -9,7 +9,6 @@ from typing import Any, Callable, Optional, Sequence, Tuple, Union
 import svgwrite as svg
 
 from dagviz.istyle import iStyle
-
 from .colors import palette
 
 _XY = Tuple[float, float]

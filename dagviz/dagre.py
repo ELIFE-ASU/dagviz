@@ -12,9 +12,10 @@ g.add_edge("a","b")
 Dagre(g)
 ```
 """
-import networkx as nx
-from string import Template
 import json
+from string import Template
+
+import networkx as nx
 
 _css_text = """
 text {
